@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, intial-scale=1" name="viewport" />
+    <title>Amy Bird's Portfolio</title>
+    <link href="../resources/css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="../resources/css/designs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header>
+
+      <!-- Logo -->
+      <a class="logo" href="../index.html">Amy Bird</a>
+
+        <!-- Hamburger Icon -->
+        <nav class="navbar">
+          <div class="hamburger-menu">
+            <div class="line line-top"></div>
+            <div class="line line-middle"></div>
+            <div class="line line-bottom"></div>
+          </div>
+
+          <!-- Nav -->
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about/index.html">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link designs" href="#">designs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contact/index.html">contact</a>
+            </li>
+          </ul>
+
+          <a class="instagram" href="#"></a>
+          <div class="copyright">&copy; Bird Designs 2020</div>
+
+        </nav>
+
+    </header>
+
+    <!-- Main -->
+    <main>
+
+      <!-- Tabs -->
+      <div class="tab-container">
+        <div class="tab-box">
+          <button id="btn1" onclick="openSeriesA()" class"tab-item">SERIES A</button>
+          <button id="btn2" onclick="openSeriesB()" class"tab-item">SERIES B</button>
+          <button id="btn3" onclick="openSeriesC()" class"tab-item">SERIES C</button>
+        </div>
+
+
+        <!-- Tab Content -->
+
+          <div id="series1" class="content">
+            <div class="image-container">
+              <div class="image-large top">
+                <a href="#"><img src="../resources/images/tree-image.png" alt="tree portrait" /></a>
+              </div>
+              <div class="image-small top">
+                <a href="#"><img src="../resources/images/tree-image.png" alt="tree portrait" /></a>
+              </div>
+            </div>
+
+            <div class="image-container">
+              <div class="image-small bottom">
+                <a href="#"><img src="../resources/images/tree-image.png" alt="tree portrait" /></a>
+              </div>
+              <div class="image-large bottom">
+                <a href="#"><img src="../resources/images/tree-image.png" alt="tree portrait" /></a>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="series2" class="content">
+            <div class="image-container">
+              <div class="image-large top">
+                <a href="#"><img src="../resources/images/lock-image.png" alt="tree portrait" /></a>
+              </div>
+              <div class="image-small top">
+                <a href="#"><img src="../resources/images/lock-image.png" alt="tree portrait" /></a>
+              </div>
+            </div>
+          </div>
+
+          <div id="series3" class="content">
+            <div class="image-container">
+              <div class="image-small bottom">
+                <a href="#"><img src="../resources/images/tree-image.png" alt="tree portrait" /></a>
+              </div>
+              <div class="image-large bottom">
+                <a href="#"><img src="../resources/images/tree-image.png" alt="tree portrait" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <a id="white" class="logo" href="index.html">Amy Bird</a>
+      <div id="white" class="contact">contact@amy-bird.com</div>
+      <div class="copyright space">&copy; Bird Designs 2020</div>
+    </footer>
+
+
+
+    <script src="../resources/js/hamburger.js"></script>
+  </body>
+</html>

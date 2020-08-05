@@ -1,0 +1,287 @@
+@font-face {
+  font-family: "taken";
+  src: url("../fonts/taken.otf")
+}
+
+@font-face {
+  font-family: "raleway-regular";
+  src: url("../fonts/raleway-regular.ttf");
+}
+
+@font-face {
+  font-family: "raleway-bold";
+  src: url("../fonts/raleway-bold.ttf");
+}
+
+@font-face {
+  font-family: "raleway-light";
+  src: url("../fonts/raleway-light.ttf");
+}
+
+/* Global */
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #9C9B9B;
+  box-sizing: border-box;
+}
+
+/* Logo */
+
+.logo {
+  font-family: taken;
+  font-size: 3.33rem;
+  letter-spacing: 6.21px;
+  text-decoration: none;
+  color: black;
+  margin-left: 5rem;
+}
+
+
+/* Hamburger Icon */
+
+.hamburger-menu {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 40px;
+  right: 50px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: all 0.8s;
+}
+
+.change .line-top {
+  transform: rotateZ(-45deg) translate(-8px, 6px);
+  background-color: #E1FC7D;
+}
+
+.change .line-middle {
+  opacity: 0;
+}
+
+.change .line-bottom {
+  transform: rotateZ(45deg) translate(-8px, -6px);
+  background-color: #E1FC7D;
+}
+
+/* Navbar */
+
+.navbar {
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  transition: right 1s cubic-bezier(1, 0, 0, 1);
+  z-index: 100;
+}
+
+.change {
+  right: 0;
+}
+
+.nav-list {
+  text-align: right;
+}
+
+.nav-item {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.nav-link {
+  font-family: raleway-light;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 1.3px;
+}
+
+.designs {
+  font-family: raleway-bold;
+  color: #E1FC7D;
+}
+
+.nav-link:hover {
+  font-family: raleway-bold;
+}
+
+.copyright {
+  font-family: raleway-light;
+  font-size: .7rem;
+  margin-right: 50px;
+}
+
+/* Main */
+
+.body {
+  display: flex;
+  position: absolute;
+  top: 18vh;
+  width: 100%;
+  height: 575px;
+}
+
+.right-container {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  margin-left: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  position: absolute;
+  width: 400px;
+  height: 575px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 20px #7C7C7C;
+  border-radius: 5px;
+  margin-left: 20%;
+}
+
+.contact-form {
+  width: 350px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 20px 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
+.email {
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.subject {
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.message {
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+span {
+  font-family: raleway-bold;
+  font-size: 11px;
+  color: black;
+  margin-bottom: 6px;
+}
+
+.btn {
+  width: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 36px;
+  border-radius: 2px;
+  font-family: raleway-bold;
+  font-size: 13px;
+  letter-spacing: 1.35px;
+}
+
+.message input {
+  padding-bottom: 100px;
+}
+
+input, textarea {
+  height: 22px;
+  border: .8px solid #BEBEBE;
+  border-radius: 2px;
+  outline: none;
+  font-family: raleway-light;
+  font-size: 12px;
+}
+
+.textarea {
+  resize: none;
+  overflow: auto;
+  height: 100px;
+}
+
+.form-line {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.15;
+}
+
+.contacts {
+  font-family: raleway-bold;
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.email-icon {
+  height: 15px;
+  width: 15px;
+  background-image: url("../images/envelope-regular.svg");
+  margin-right: 10px;
+}
+
+.email-text {
+  color: black;
+  font-family: raleway;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.help {
+  font-family: raleway-bold;
+  font-size: 30px;
+}
+
+.help-text {
+  font-family: raleway-light;
+  font-size: 15px;
+  color: black;
+  opacity: .8;
+}

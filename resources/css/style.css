@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "taken";
+  src: url("../fonts/taken.otf")
+}
+
+@font-face {
+  font-family: "raleway-regular";
+  src: url("../fonts/raleway-regular.ttf");
+}
+
+@font-face {
+  font-family: "raleway-bold";
+  src: url("../fonts/raleway-bold.ttf");
+}
+
+@font-face {
+  font-family: "raleway-light";
+  src: url("../fonts/raleway-light.ttf");
+}
+
+/* Global */
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #9C9B9B;
+  box-sizing: border-box;
+}
+
+p {
+  font-family: raleway-light;
+  font-size: 1rem;
+}
+
+h1 {
+  font-family: raleway-bold;
+  font-size: 1.333rem;
+  letter-spacing: 2.48px;
+}
+
+h2 {
+  font-family: raleway-bold;
+  color: black;
+  text-transform: capitalize;
+}
+
+/* Nav */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  left: 27%;
+  top: 16rem;
+}
+
+.logo {
+  font-family: taken;
+  font-size: 3.33rem;
+  letter-spacing: 6.21px;
+  text-decoration: none;
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nav {
+  font-family: raleway-light;
+  text-decoration: none;
+  color: #9C9B9B;
+  letter-spacing: 1.3px;
+}
+
+.nav:hover {
+  font-family: raleway-bold;
+  color: black;
+}
+
+.home {
+  font-family: raleway-bold;
+  color: black;
+}
+
+.copyright {
+  font-family: raleway-light;
+  font-size: .7rem;
+}
+
+/* Images Scroll */
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 45%;
+  width: 550px;
+}
+
+main img {
+  height: auto;
+  width: 100%;
+  margin: 1.5rem 0;
+  box-shadow: 5px 5px 20px #7C7C7C;
+  transition: all .2s ease-in-out;
+}
+
+main img:hover {
+  transform: scale(1.05);
+}
