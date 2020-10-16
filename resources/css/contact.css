@@ -220,7 +220,26 @@ span {
   font-size: 13px;
   letter-spacing: 1.35px;
   cursor: pointer;
+  border: solid 1px black;
 }
+
+.btn:hover {
+  width: 100%;
+  background: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 36px;
+  border-radius: 2px;
+  font-family: raleway-bold;
+  font-size: 13px;
+  letter-spacing: 1.35px;
+  cursor: pointer;
+  border: solid 1px black;
+}
+
 
 input, textarea {
   height: 22px;

@@ -50,30 +50,31 @@
     <main>
     <div class="body">
       <div class="container">
-        <div class="contact-form">
-
+        <script type="text/javascript">var submitted=false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thank-you.html';}"></iframe>
+        <form class="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDRfQMqSB8_fRrGo24XMCnGurkHCsClJFccyheT7QEG8nuIA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
             <div class="name">
               <div class="stack">
                 <span class="span-text first-name">FIRST NAME</span>
-                <input type="text" class="input">
+                <input type="text" class="input" name="entry.594369024">
               </div>
               <div class="stack last-name">
                 <span class="span-text">LAST NAME</span>
-                <input type="text" class="input">
+                <input type="text" class="input" name="entry.360232409">
               </div>
             </div>
             <div class="email stack">
               <span class="span-text">EMAIL</span>
-              <input type="text" class="input">
+              <input type="text" class="input" name="entry.669971880">
             </div>
             <div class="subject stack">
               <span class="span-text">SUBJECT</span>
-              <input type="text" class="input">
+              <input type="text" class="input" name="entry.678356750">
             </div>
             <div class="message stack">
               <span class="span-text">MESSAGE</span>
-              <textarea type="text" class="textarea" cols="30" rows="5"></textarea>
-              <div class="btn">Send Message</div>
+              <textarea type="text" class="textarea" cols="30" rows="5" name="entry.2029339251"></textarea>
+              <input type="submit" name="submit" class="btn" value="Send Message" onclick="redirect()"/>
             </div>
             <div class="form-line"></div>
             <span class="contacts">Contact Information</span>
@@ -83,7 +84,7 @@
             </div>
 
 
-        </div>
+        </form>
       </div>
 
       <div class="right-container">

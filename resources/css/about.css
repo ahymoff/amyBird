@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "raleway-semibold-italic";
-  src: url("../fonts/raleway-semibold-italic.ttf");
+  src: url("../fonts/Raleway-SemiBoldItalic.ttf");
 }
 
 /* Global */
@@ -138,7 +138,7 @@ html {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 425px 1fr 350px 1fr;
+  grid-template-columns: 1fr 425px .6fr 350px 1fr;
   grid-template-rows: 50px 50px 400px 50px 400px 50px 400px;
   grid-template-areas:
     ". . . . ."
@@ -217,6 +217,7 @@ h3 {
   letter-spacing: 5.29px;
   color: black;
   padding-left: 15px;
+  margin-top: 20px;
 }
 
 .project p {

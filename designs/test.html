@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @font-face {
+    font-family: "taken";
+    src: url("../resources/fonts/taken.otf")
+  }
+
+  @font-face {
+    font-family: "raleway-regular";
+    src: url("../fonts/raleway-regular.ttf");
+  }
+
+  @font-face {
+    font-family: "raleway-bold";
+    src: url("../fonts/raleway-bold.ttf");
+  }
+
+  @font-face {
+    font-family: "raleway-light";
+    src: url("../fonts/raleway-light.ttf");
+  }
+
+  @font-face {
+    font-family: "raleway-semibold-italic";
+    src: url("../fonts/Raleway-SemiBoldItalic.ttf");
+  }
+
+  /* Global */
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position:relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #9C9B9B;
+  box-sizing: border-box;
+}
+
+/* Logo */
+
+.logo {
+  font-family: taken;
+  font-size: 3.33rem;
+  letter-spacing: 6.21px;
+  text-decoration: none;
+  color: black;
+  margin-left: 5rem;
+}
+
+
+/* Hamburger Icon */
+
+.hamburger-menu {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 40px;
+  right: 50px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transition: all 0.8s;
+}
+
+.change .line-top {
+  transform: rotateZ(-45deg) translate(-8px, 6px);
+  background-color: #E1FC7D
+}
+
+.change .line-middle {
+  opacity: 0;
+}
+
+.change .line-bottom {
+  transform: rotateZ(45deg) translate(-8px, -6px);
+  background-color: #E1FC7D;
+}
+
+/* Navbar */
+
+.navbar {
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  transition: right 1s cubic-bezier(1, 0, 0, 1);
+  z-index: 100;
+}
+
+.change {
+  right: 0;
+}
+
+.nav-list {
+  text-align: right;
+}
+
+.nav-item {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.nav-link {
+  font-family: raleway-light;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 1.3px;
+}
+
+.selected {
+  font-family: raleway-bold;
+  color: #E1FC7D;
+}
+
+.nav-link:hover {
+  font-family: raleway-bold;
+}
+
+.copyright {
+  font-family: raleway-light;
+  font-size: .7rem;
+  margin-right: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 425px .3fr 425px 1fr;
+  grid-template-rows: 100px 600px 50px;
+  grid-template-areas:
+    ". . . . ."
+    ". a . b ."
+    ". . . . ."
+}
+
+.image-container {
+  grid-area: a;
+}
+
+.text {
+  grid-area: b;
+}
+
+h1 {
+  font-family: raleway-bold;
+  font-size: 15px;
+  letter-spacing: 5.29px;
+  color: black;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: raleway-light;
+  font-size: 15px;
+  color: black;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10rem 0;
+  position: relative;
+  top: 5rem;
+  background-color: black;
+}
+
+#white {
+  color: white;
+}
+
+.contact {
+  padding: 1rem 3rem;
+  font-family: raleway-bold;
+}
+
+.space {
+  padding-left: 3rem;
+}
+
+</style>
+<script>
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+  /*create magnifier glass:*/
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+  /*insert magnifier glass:*/
+  img.parentElement.insertBefore(glass, img);
+  /*set background properties for the magnifier glass:*/
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+  /*execute a function when someone moves the magnifier glass over the image:*/
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+  /*and also for touch screens:*/
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+  function moveMagnifier(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    /*prevent the magnifier glass from being positioned outside the image:*/
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    /*set the position of the magnifier glass:*/
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    /*display what the magnifier glass "sees":*/
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+</head>
+<body>
+
+  <header>
+
+    <!-- Logo -->
+    <a class="logo" href="../index.html">Amy Bird</a>
+
+      <!-- Hamburger Icon -->
+      <nav class="navbar">
+        <div class="hamburger-menu">
+          <div class="line line-top"></div>
+          <div class="line line-middle"></div>
+          <div class="line line-bottom"></div>
+        </div>
+
+        <!-- Nav -->
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link selected" href="#">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../designs/index.html">designs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact/index.html">contact</a>
+          </li>
+        </ul>
+
+        <div class="copyright">&copy; Bird Designs 2020</div>
+
+      </nav>
+
+  </header>
+
+<div class="container">
+  <div class="image-container">
+    <div class="img-magnifier-container">
+      <img id="myimage" src="../resources/images/tree-image.png" width="425" height="555">
+    </div>
+  </div>
+  <div class="text">
+    <h1>Title</h1>
+    <p>Beginning</p>
+    <h1>Source</h1>
+    <p>Desert Financtial Credit Union</p>
+    <h1>Recipient</h1>
+    <p>New Economy Coalition</p>
+    <h1>Notes</h1>
+    <p>As I was getting an understanding of the crime of cutting up money, I discovered online the money collage art of Mark Wagner. I was both thrilled and devastated to find it. Thrilled because it is beautiful and technically and edgy and interesting. Devastated because his money collages and his blogs are brilliant in ways I knew I could never be brilliant and I had seen them before I had even seen or started my own work.  Why bother, I thought.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <a id="white" class="logo" href="../index.html">Amy Bird</a>
+  <div id="white" class="contact">contact@amy-bird.com</div>
+  <div class="copyright space">&copy; Bird Designs 2020</div>
+</footer>
+
+<script>
+/* Initiate Magnify Function
+with the id of the image, and the strength of the magnifier glass:*/
+magnify("myimage", 3);
+</script>
+<script src="../resources/js/hamburger.js"></script>
+</body>
+</html>

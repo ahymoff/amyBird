@@ -40,3 +40,7 @@ function openSeriesC() {
   btn2.style.color = "#9C9B9B";
   btn3.style.color = "black";
 }
+
+var redirect = function(){
+   document.location.href="thank-you.html"
+}
