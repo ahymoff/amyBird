@@ -23,6 +23,11 @@
   src: url("../fonts/Raleway-SemiBoldItalic.ttf");
 }
 
+@font-face {
+  font-family: "raleway-semibold";
+  src: url("../fonts/Raleway-SemiBold.ttf");
+}
+
 /* Global */
 
 html {
@@ -31,6 +36,7 @@ html {
   color: #9C9B9B;
   box-sizing: border-box;
 }
+
 
 /* Logo */
 
@@ -194,6 +200,23 @@ html {
 
 .cta {
   grid-area: cta;
+  font-family: raleway-light;
+  font-size: 15px;
+  color: black;
+  padding-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 75px;
+  text-decoration: none;
+}
+
+.cta:hover {
+  font-family: raleway-semibold;
+  font-size: 15px;
+  color: black;
+  padding-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 75px;
+  text-decoration: none;
 }
 
 .project h1, .about h1 {
@@ -235,15 +258,6 @@ h3 {
   margin: 0;
 }
 
-a {
-  font-family: raleway-light;
-  font-size: 15px;
-  color: black;
-  padding-left: 15px;
-  margin-top: 20px;
-  margin-bottom: 75px;
-  text-decoration: none;
-}
 
 .about-section {
   padding: 0;
