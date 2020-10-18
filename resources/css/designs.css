@@ -18,6 +18,16 @@
   src: url("../fonts/raleway-light.ttf");
 }
 
+@font-face {
+  font-family: "raleway-semibold-italic";
+  src: url("../fonts/Raleway-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "raleway-light-italic";
+  src: url("../fonts/Raleway-LightItalic.ttf");
+}
+
 /* Global */
 
 html {
@@ -168,62 +178,67 @@ html {
   color: black;
 }
 
-/* Tabbed Content */
-
-.content {
-  position: absolute;
-  transform: translateX(-10000px);
+.container {
+  display: grid;
+  grid-template-columns: 1fr 200px .3fr 200px 1fr;
+  grid-template-rows: 100px 200px 25px 200px 150px;
+  grid-template-areas:
+    ". . . . ."
+    ". a . b ."
+    ". . . . ."
+    ". c . d ."
+    ". . . . ."
 }
 
-#series1 {
-  transform: translateX(0px);
-  margin-top: 3rem;
+.a {
+  grid-area: a;
 }
 
-#series2, #series3 {
-  margin-top: 3rem;
+.b {
+  grid-area: b;
 }
 
-.image-container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 1.5rem;
+.c {
+  grid-area: c;
 }
 
-.top {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+.d {
+  grid-area: d;
 }
 
-.bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+h1 {
+  font-family: raleway-bold;
+  font-size: 18px;
+  letter-spacing: 5.29px;
+  color: black;
+  text-transform: uppercase;
+  padding-left: 20px;
 }
 
-.image-large {
-  width: 55%;
-  margin: 1.5rem;
+.project-container a {
+  font-family: raleway-light-italic;
+  font-size: 15px;
+  letter-spacing: 5.29px;
+  color: black;
+  padding-left: 15px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.image-small {
-  width: 25%;
-  margin: 1.5rem;
+.project-container a:hover {
+  font-family: raleway-semibold-italic;
+  font-size: 15px;
+  letter-spacing: 5.29px;
+  color: black;
+  padding-left: 15px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-img {
-  height: auto;
-  width: 100%;
-  margin: 1.5rem 0;
-  box-shadow: 5px 5px 20px #7C7C7C;
-  transition: all .2s ease-in-out;
-}
-
-img:hover {
-  transform: scale(1.05);
+.project-container li {
+  list-style-type: none;
 }
 
 /* Footer */
