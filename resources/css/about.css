@@ -1,3 +1,5 @@
+/* Fonts */
+
 @font-face {
   font-family: "taken";
   src: url("../fonts/taken.otf")
@@ -37,7 +39,7 @@ html {
   box-sizing: border-box;
 }
 
-
+/* Header */
 /* Logo */
 
 .logo {
@@ -156,6 +158,46 @@ html {
     ". project-body3 . about-body3 .";
   }
 
+  @media only screen and (max-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr 425px 1fr;
+      grid-template-rows: 50px 50px 400px 50px 400px 50px 400px 400px 50px 400px 50px 400px;
+      grid-template-areas:
+        ". . ."
+        ". project-title ."
+        ". project-body1 ."
+        ". . ."
+        ". project-body2 ."
+        ". . ."
+        ". project-body3 ."
+        ". about-title ."
+        ". about-body1 ."
+        ". about-body2 ."
+        ". about-body3 ."
+        ;
+    }
+  }
+
+  @media only screen and (max-width: 720px) {
+    .container {
+      grid-template-columns: 1fr 300px 1fr;
+      grid-template-rows: 50px 50px 400px 50px 400px 50px 400px 400px 50px 400px 50px 400px 150px;
+      grid-template-areas:
+        ". . ."
+        ". project-title ."
+        ". project-body1 ."
+        ". . ."
+        ". project-body2 ."
+        ". . ."
+        ". project-body3 ."
+        ". about-title ."
+        ". about-body1 ."
+        ". about-body2 ."
+        ". about-body3 ."
+        ;
+    }
+  }
+
 .project {
   grid-area: project-title;
   }
@@ -164,7 +206,7 @@ html {
   grid-area: about-title;
 }
 
-.inner-project-container {
+.project-container {
   display: grid;
   grid-template-columns: 75px 350px;
   grid-template-rows: 30px 100 50px;
@@ -172,7 +214,22 @@ html {
     "number title"
     "number body"
     ". cta";
+}
+
+@media only screen and (max-width: 720px) {
+  .project-container {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 60px 60px auto 30px;
+    grid-template-areas:
+      "number"
+      "title"
+      "body"
+      "cta";
   }
+}
+
 
 .series-a {
   grid-area: project-body1;
@@ -211,13 +268,16 @@ html {
 
 .cta:hover {
   font-family: raleway-semibold;
-  font-size: 15px;
-  color: black;
-  padding-left: 15px;
-  margin-top: 20px;
-  margin-bottom: 75px;
-  text-decoration: none;
 }
+
+@media only screen and (max-width: 720px) {
+  .cta {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+/* Text Styling */
 
 .project h1, .about h1 {
   font-family: raleway-bold;
@@ -243,21 +303,16 @@ h3 {
   margin-top: 20px;
 }
 
+p {
+  font-family: raleway-light;
+  font-size: 15px;
+  color: black;
+  margin: 0;
+}
+
 .project p {
-  font-family: raleway-light;
-  font-size: 15px;
-  color: black;
   padding-left: 15px;
-  margin: 0;
 }
-
-.about p {
-  font-family: raleway-light;
-  font-size: 15px;
-  color: black;
-  margin: 0;
-}
-
 
 .about-section {
   padding: 0;
