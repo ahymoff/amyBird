@@ -155,6 +155,20 @@ html {
   }
 }
 
+@media only screen and (max-width: 720px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 100px 70px 100px 575px 50px;
+    grid-template-areas:
+      ". . ."
+      ". help ."
+      ". . ."
+      ". contact-form ."
+      ". . .";
+  }
+}
+
 .help-container {
   grid-area: help;
   width: 400px;
@@ -162,6 +176,12 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media only screen and (max-width: 720px) {
+  .help-container {
+    width: 300px;
+  }
 }
 
 
@@ -176,6 +196,13 @@ html {
   border-radius: 5px;
 }
 
+@media only screen and (max-width: 720px) {
+  .contact-container {
+    width: 300px;
+    height: 610px;
+  }
+}
+
 .contact-form {
   width: 350px;
   height: 550px;
@@ -185,10 +212,18 @@ html {
   margin-top: 40px;
 }
 
+@media only screen and (max-width: 720px) {
+  .contact-form {
+    width: 250px;
+    height: 590px;
+  }
+}
+
 .stack {
   display: flex;
   flex-direction: column;
 }
+
 
 .name {
   display: flex;
@@ -198,6 +233,15 @@ html {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 720px) {
+  .name {
+    flex-direction: column;
+  }
+
+  .last-name {
+    margin-top: 20px;
+  }
+}
 
 .email {
   margin: 0 0 20px 0;
