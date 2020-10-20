@@ -27,17 +27,23 @@
 * {box-sizing: border-box;}
 
 .img-magnifier-container {
-position:relative;
+position: relative;
 }
 
 .img-magnifier-glass {
 position: absolute;
-border: 3px solid #000;
+border: 3px solid white;
 border-radius: 50%;
 cursor: none;
 /*Set the size of the magnifier glass:*/
 width: 100px;
 height: 100px;
+}
+
+@media only screen and (max-width: 500px) {
+  .img-magnifier-glass {
+    display: none;
+  }
 }
 
 html {
@@ -58,6 +64,17 @@ color: black;
 margin-left: 5rem;
 }
 
+@media only screen and (max-width: 650px) {
+  header {
+    top: 0;
+    left: 0;
+    height: 115px;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+  }
+}
 
 /* Hamburger Icon */
 
@@ -82,7 +99,7 @@ transition: all 0.8s;
 
 .change .line-top {
 transform: rotateZ(-45deg) translate(-8px, 6px);
-background-color: #E1FC7D
+background-color: #E1FC7D;
 }
 
 .change .line-middle {
@@ -157,6 +174,39 @@ grid-template-areas:
   ". . . . ."
   ". a . b ."
   ". . . . ."
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+  display: grid;
+  grid-template-columns: 1fr 425px 1fr;
+  grid-template-rows: 100px 600px 25px 600px 50px;
+  grid-template-areas:
+    ". . ."
+    ". a ."
+    ". . ."
+    ". b ."
+    ". . ."
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+  display: grid;
+  grid-template-columns: 1fr 375px 1fr;
+  grid-template-rows: 100px 500px 25px 500px 50px;
+  grid-template-areas:
+    ". . ."
+    ". a ."
+    ". . ."
+    ". b ."
+    ". . ."
+  }
+
+  img {
+    width: 370px;
+    height: auto;
+  }
 }
 
 .image-container {

@@ -38,6 +38,17 @@ html {
   margin-left: 5rem;
 }
 
+@media only screen and (max-width: 650px) {
+  header {
+    top: 0;
+    left: 0;
+    height: 115px;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+  }
+}
 
 /* Hamburger Icon */
 
@@ -142,6 +153,7 @@ html {
     ". . ."
 }
 
+
 .text {
   grid-area: a;
 }
@@ -159,6 +171,18 @@ html {
     "top-large-image . top-small-image"
 }
 
+@media only screen and (max-width: 650px) {
+  .image-container-top {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      ". top-large-image ."
+      ". top-small-image ."
+  }
+}
+
 .top-large-image {
   grid-area: top-large-image;
 }
@@ -174,6 +198,18 @@ html {
   grid-template-rows: auto auto;
   grid-template-areas:
     "bottom-small-image . bottom-large-image"
+}
+
+@media only screen and (max-width: 650px) {
+  .image-container-bottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      ". bottom-small-image ."
+      ". bottom-large-image ."
+  }
 }
 
 .bottom-large-image {
