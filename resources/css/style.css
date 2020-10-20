@@ -214,6 +214,7 @@ header {
 
   .nav-link:hover {
     font-family: raleway-bold;
+    color: #E1FC7D;
   }
 
   .copyright {
@@ -245,7 +246,9 @@ header {
     left: auto;
     width: auto;
     top: 130px;
-    z-index: -10;
+    z-index: 20;
+    margin-right: 5%;
+    margin-left: 5%;
   }
 }
 
@@ -259,7 +262,9 @@ header {
     left: auto;
     width: auto;
     top: 130px;
-    z-index: -10;
+    z-index: 20;
+    margin-right: 5%;
+    margin-left: 5%;
   }
 }
 
@@ -279,6 +284,11 @@ main img:hover {
   main img {
     width: 550px;
     margin: .75rem auto;
+    transition: none;
+  }
+
+  main img:hover {
+    transform: none;
   }
 }
 
@@ -286,5 +296,45 @@ main img:hover {
   main img {
     margin: .75rem 0;
     width: 100%;
+  }
+}
+
+footer {
+  display: none;
+}
+
+@media only screen and (max-width: 1160px) {
+  footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10rem 0;
+    position: relative;
+    top: 5rem;
+    background-color: black;
+    margin-top: 100px;
+  }
+
+  #white {
+    color: white;
+  }
+
+  .footer-logo {
+    font-family: taken;
+    font-size: 3.33rem;
+    letter-spacing: 6.21px;
+    text-decoration: none;
+    color: white;
+    margin-left: 98px;
+  }
+
+  .contact {
+    padding: 1rem 3rem;
+    font-family: raleway-bold;
+  }
+
+  .space {
+    padding-left: 3rem;
   }
 }
