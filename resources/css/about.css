@@ -274,6 +274,7 @@ html {
   .cta {
     margin-top: 10px;
     margin-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -312,6 +313,16 @@ p {
 
 .project p {
   padding-left: 15px;
+}
+
+@media only screen and (max-width: 720px) {
+  .project p {
+    padding-left: 0;
+  }
+
+  h3 {
+    padding-left: 0;
+  }
 }
 
 .about-section {
